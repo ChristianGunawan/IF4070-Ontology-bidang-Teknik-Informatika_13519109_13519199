@@ -1,0 +1,634 @@
+@prefix : <http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation> .
+
+<http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation> rdf:type owl:Ontology ;
+                                                                                       rdfs:comment "This is Association for Computing Machinery (ACM) Curricula Recommendations"@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#able_to
+:able_to rdf:type owl:ObjectProperty ;
+         rdfs:domain :Undergraduates_Program ;
+         rdfs:range :Core_Performance_Capabilities ;
+         rdfs:comment "undergraduates able_to perform" .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#study
+:study rdf:type owl:ObjectProperty ;
+       rdfs:range :Undergraduates_Program .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#takes
+:takes rdf:type owl:ObjectProperty ;
+       rdfs:domain :Undergraduates_Program ;
+       rdfs:range :Main_Knowledge_Areas ;
+       rdfs:comment "undergraduates takes knowledges" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#knowledgesID
+:knowledgesID rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Main_Knowledge_Areas ;
+              rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#performanceID
+:performanceID rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Core_Performance_Capabilities ;
+               rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#undergraduatesID
+:undergraduatesID rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Undergraduates_Program ;
+                  rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Computer_Engineering
+:Computer_Engineering rdf:type owl:Class ;
+                      owl:equivalentClass [ rdf:type owl:Restriction ;
+                                            owl:onProperty :able_to ;
+                                            owl:someValuesFrom :Design_and_implement_computing_systems_computer-controlled_equipment_and_communication_software
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :able_to ;
+                                            owl:someValuesFrom :Maintain_computing_systems_that_involve_the_integration_of_software_and_hardware_devices
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :takes ;
+                                            owl:someValuesFrom :Computer_systems_engineering
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :takes ;
+                                            owl:someValuesFrom :Digital_logic
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :takes ;
+                                            owl:someValuesFrom :Distrbuted_systems
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :takes ;
+                                            owl:someValuesFrom :Electronics
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :takes ;
+                                            owl:someValuesFrom :Programming_fundamentals
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :takes ;
+                                            owl:someValuesFrom <http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Circuits_&_systems>
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :takes ;
+                                            owl:someValuesFrom <http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Computer_architecture_&_organization>
+                                          ] ;
+                      rdfs:subClassOf :Undergraduates_Program .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Computer_Science
+:Computer_Science rdf:type owl:Class ;
+                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                        owl:onProperty :able_to ;
+                                        owl:someValuesFrom :Develop_solutions_to_computing_problems
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :able_to ;
+                                        owl:someValuesFrom :Devise_new_ways_to_use_computers
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :able_to ;
+                                        owl:someValuesFrom :Optimize_programming_solutions
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :able_to ;
+                                        owl:someValuesFrom :Prove_ffeoretical_results
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :able_to ;
+                                        owl:someValuesFrom <http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Design_&_implement_software>
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :takes ;
+                                        owl:someValuesFrom :Discrete_structures
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :takes ;
+                                        owl:someValuesFrom :Programming_languages
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :takes ;
+                                        owl:someValuesFrom :Software_development_fundamenbls
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :takes ;
+                                        owl:someValuesFrom :Software_engineering
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :takes ;
+                                        owl:someValuesFrom :Systems_fundarnentals
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :takes ;
+                                        owl:someValuesFrom <http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Alqonthms_&_complexity>
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :takes ;
+                                        owl:someValuesFrom <http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Computer_architecture_&_organization>
+                                      ] ;
+                  rdfs:subClassOf :Undergraduates_Program .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Computer_systems_engineering
+:Computer_systems_engineering rdf:type owl:Class ;
+                              rdfs:subClassOf :Main_Knowledge_Areas .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Computing_essentials
+:Computing_essentials rdf:type owl:Class ;
+                      rdfs:subClassOf :Main_Knowledge_Areas .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Core_Performance_Capabilities
+:Core_Performance_Capabilities rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Define_information_requirements
+:Define_information_requirements rdf:type owl:Class ;
+                                 rdfs:subClassOf :Core_Performance_Capabilities .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Define_information_systems_technical_requirements
+:Define_information_systems_technical_requirements rdf:type owl:Class ;
+                                                   rdfs:subClassOf :Core_Performance_Capabilities .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Design_and_implement_computing_systems_computer-controlled_equipment_and_communication_software
+:Design_and_implement_computing_systems_computer-controlled_equipment_and_communication_software rdf:type owl:Class ;
+                                                                                                 rdfs:subClassOf :Core_Performance_Capabilities .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Design_enterprise_architecture
+:Design_enterprise_architecture rdf:type owl:Class ;
+                                rdfs:subClassOf :Core_Performance_Capabilities .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Develop_software_systems
+:Develop_software_systems rdf:type owl:Class ;
+                          rdfs:subClassOf :Core_Performance_Capabilities .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Develop_solutions_to_computing_problems
+:Develop_solutions_to_computing_problems rdf:type owl:Class ;
+                                         rdfs:subClassOf :Core_Performance_Capabilities .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Devise_new_ways_to_use_computers
+:Devise_new_ways_to_use_computers rdf:type owl:Class ;
+                                  rdfs:subClassOf :Core_Performance_Capabilities .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Digital_logic
+:Digital_logic rdf:type owl:Class ;
+               rdfs:subClassOf :Main_Knowledge_Areas .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Discrete_structures
+:Discrete_structures rdf:type owl:Class ;
+                     rdfs:subClassOf :Main_Knowledge_Areas .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Distrbuted_systems
+:Distrbuted_systems rdf:type owl:Class ;
+                    rdfs:subClassOf :Main_Knowledge_Areas .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Electronics
+:Electronics rdf:type owl:Class ;
+             rdfs:subClassOf :Main_Knowledge_Areas .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Enterprise_architecture
+:Enterprise_architecture rdf:type owl:Class ;
+                         rdfs:subClassOf :Main_Knowledge_Areas .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Exploit_technological_innovations
+:Exploit_technological_innovations rdf:type owl:Class ;
+                                   rdfs:subClassOf :Core_Performance_Capabilities .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Foundations_Of_information
+:Foundations_Of_information rdf:type owl:Class ;
+                            rdfs:subClassOf :Main_Knowledge_Areas .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Implement_inforrnation_systems
+:Implement_inforrnation_systems rdf:type owl:Class ;
+                                rdfs:subClassOf :Core_Performance_Capabilities .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Improve_organizational_processes
+:Improve_organizational_processes rdf:type owl:Class ;
+                                  rdfs:subClassOf :Core_Performance_Capabilities .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Information_Systems
+:Information_Systems rdf:type owl:Class ;
+                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                           owl:onProperty :able_to ;
+                                           owl:someValuesFrom :Define_information_requirements
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :able_to ;
+                                           owl:someValuesFrom :Design_enterprise_architecture
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :able_to ;
+                                           owl:someValuesFrom :Exploit_technological_innovations
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :able_to ;
+                                           owl:someValuesFrom :Improve_organizational_processes
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :able_to ;
+                                           owl:someValuesFrom :Manage_information_systems_risks
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :able_to ;
+                                           owl:someValuesFrom <http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Secure_data_&_infrastrudure>
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :takes ;
+                                           owl:someValuesFrom :Core_Performance_Capabilities
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :takes ;
+                                           owl:someValuesFrom :Enterprise_architecture
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :takes ;
+                                           owl:someValuesFrom :Foundations_Of_information
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :takes ;
+                                           owl:someValuesFrom :Project_management
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :takes ;
+                                           owl:someValuesFrom <http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Data_&_information_management>
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :takes ;
+                                           owl:someValuesFrom <http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Inforrnation_systems_manaqement_&_acquisition>
+                                         ] ;
+                     rdfs:subClassOf :Undergraduates_Program .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Information_Technology
+:Information_Technology rdf:type owl:Class ;
+                        owl:equivalentClass [ rdf:type owl:Restriction ;
+                                              owl:onProperty :able_to ;
+                                              owl:someValuesFrom :Train_and_support_users
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :able_to ;
+                                              owl:someValuesFrom <http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Configure_&_integrate_business_applicabons>
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :able_to ;
+                                              owl:someValuesFrom <http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Model,_design,_select,_configure_&_manage_databases>
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :able_to ;
+                                              owl:someValuesFrom <http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Plan,_select,_configure_&_maintain_information_systems_infrastructure>
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :takes ;
+                                              owl:someValuesFrom :Core_Performance_Capabilities
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :takes ;
+                                              owl:someValuesFrom :Information_management
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :takes ;
+                                              owl:someValuesFrom :Information_technology_fundamentals
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :takes ;
+                                              owl:someValuesFrom :Interpersonal_communication
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :takes ;
+                                              owl:someValuesFrom :Systems_integration
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :takes ;
+                                              owl:someValuesFrom :Technical_support
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :takes ;
+                                              owl:someValuesFrom <http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Mathematical_&_engineering_fundamentals>
+                                            ] ;
+                        rdfs:subClassOf :Undergraduates_Program .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Information_management
+:Information_management rdf:type owl:Class ;
+                        rdfs:subClassOf :Main_Knowledge_Areas .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Information_technology_fundamentals
+:Information_technology_fundamentals rdf:type owl:Class ;
+                                     rdfs:subClassOf :Main_Knowledge_Areas .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Information_technology_infrastructure
+:Information_technology_infrastructure rdf:type owl:Class ;
+                                       rdfs:subClassOf :Main_Knowledge_Areas .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Interpersonal_communication
+:Interpersonal_communication rdf:type owl:Class ;
+                             rdfs:subClassOf :Main_Knowledge_Areas .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Main_Knowledge_Areas
+:Main_Knowledge_Areas rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Maintain_computing_systems_that_involve_the_integration_of_software_and_hardware_devices
+:Maintain_computing_systems_that_involve_the_integration_of_software_and_hardware_devices rdf:type owl:Class ;
+                                                                                          rdfs:subClassOf :Core_Performance_Capabilities .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Manage_information_systems_risks
+:Manage_information_systems_risks rdf:type owl:Class ;
+                                  rdfs:subClassOf :Core_Performance_Capabilities .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Manage_software_projects
+:Manage_software_projects rdf:type owl:Class ;
+                          rdfs:subClassOf :Core_Performance_Capabilities .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Mathematical_fundamentals
+:Mathematical_fundamentals rdf:type owl:Class ;
+                           rdfs:subClassOf :Main_Knowledge_Areas .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Optimize_programming_solutions
+:Optimize_programming_solutions rdf:type owl:Class ;
+                                rdfs:subClassOf :Core_Performance_Capabilities .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Professional_practice
+:Professional_practice rdf:type owl:Class ;
+                       rdfs:subClassOf :Main_Knowledge_Areas .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Programming_fundamentals
+:Programming_fundamentals rdf:type owl:Class ;
+                          rdfs:subClassOf :Main_Knowledge_Areas .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Programming_languages
+:Programming_languages rdf:type owl:Class ;
+                       rdfs:subClassOf :Main_Knowledge_Areas .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Project_management
+:Project_management rdf:type owl:Class ;
+                    rdfs:subClassOf :Main_Knowledge_Areas .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Prove_ffeoretical_results
+:Prove_ffeoretical_results rdf:type owl:Class ;
+                           rdfs:subClassOf :Core_Performance_Capabilities .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Software_Engineering
+:Software_Engineering rdf:type owl:Class ;
+                      owl:equivalentClass [ rdf:type owl:Restriction ;
+                                            owl:onProperty :able_to ;
+                                            owl:someValuesFrom :Define_information_systems_technical_requirements
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :able_to ;
+                                            owl:someValuesFrom :Develop_software_systems
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :able_to ;
+                                            owl:someValuesFrom :Improve_organizational_processes
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :able_to ;
+                                            owl:someValuesFrom :Manage_software_projects
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :able_to ;
+                                            owl:someValuesFrom <http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Do_small-scale_&_large-scale_programming>
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :takes ;
+                                            owl:someValuesFrom :Computing_essentials
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :takes ;
+                                            owl:someValuesFrom :Professional_practice
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :takes ;
+                                            owl:someValuesFrom :Project_management
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :takes ;
+                                            owl:someValuesFrom :Software_design
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :takes ;
+                                            owl:someValuesFrom <http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Mathematical_&_engineering_fundamentals>
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :takes ;
+                                            owl:someValuesFrom <http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Software_modeling_&_analysis>
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :takes ;
+                                            owl:someValuesFrom <http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Software_verification_&_validation>
+                                          ] ;
+                      rdfs:subClassOf :Undergraduates_Program .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Software_design
+:Software_design rdf:type owl:Class ;
+                 rdfs:subClassOf :Main_Knowledge_Areas .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Software_development_fundamenbls
+:Software_development_fundamenbls rdf:type owl:Class ;
+                                  rdfs:subClassOf :Main_Knowledge_Areas .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Software_engineering
+:Software_engineering rdf:type owl:Class ;
+                      rdfs:subClassOf :Main_Knowledge_Areas .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Systems_fundarnentals
+:Systems_fundarnentals rdf:type owl:Class ;
+                       rdfs:subClassOf :Main_Knowledge_Areas .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Systems_integration
+:Systems_integration rdf:type owl:Class ;
+                     rdfs:subClassOf :Main_Knowledge_Areas .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Technical_support
+:Technical_support rdf:type owl:Class ;
+                   rdfs:subClassOf :Main_Knowledge_Areas .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Train_and_support_users
+:Train_and_support_users rdf:type owl:Class ;
+                         rdfs:subClassOf :Core_Performance_Capabilities .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Undergraduates_Program
+:Undergraduates_Program rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Alqonthms_&_complexity
+<http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Alqonthms_&_complexity> rdf:type owl:Class ;
+                                                                                                             rdfs:subClassOf :Main_Knowledge_Areas .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Circuits_&_systems
+<http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Circuits_&_systems> rdf:type owl:Class ;
+                                                                                                         rdfs:subClassOf :Main_Knowledge_Areas .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Computer_architecture_&_organization
+<http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Computer_architecture_&_organization> rdf:type owl:Class ;
+                                                                                                                           rdfs:subClassOf :Main_Knowledge_Areas .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Configure_&_integrate_business_applicabons
+<http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Configure_&_integrate_business_applicabons> rdf:type owl:Class ;
+                                                                                                                                 rdfs:subClassOf :Core_Performance_Capabilities .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Data_&_information_management
+<http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Data_&_information_management> rdf:type owl:Class ;
+                                                                                                                    rdfs:subClassOf :Main_Knowledge_Areas .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Design_&_implement_software
+<http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Design_&_implement_software> rdf:type owl:Class ;
+                                                                                                                  rdfs:subClassOf :Core_Performance_Capabilities .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Do_small-scale_&_large-scale_programming
+<http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Do_small-scale_&_large-scale_programming> rdf:type owl:Class ;
+                                                                                                                               rdfs:subClassOf :Core_Performance_Capabilities .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Inforrnation_systems_manaqement_&_acquisition
+<http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Inforrnation_systems_manaqement_&_acquisition> rdf:type owl:Class ;
+                                                                                                                                    rdfs:subClassOf :Main_Knowledge_Areas .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Mathematical_&_engineering_fundamentals
+<http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Mathematical_&_engineering_fundamentals> rdf:type owl:Class ;
+                                                                                                                              rdfs:subClassOf :Main_Knowledge_Areas .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Model,_design,_select,_configure_&_manage_databases
+<http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Model,_design,_select,_configure_&_manage_databases> rdf:type owl:Class ;
+                                                                                                                                          rdfs:subClassOf :Core_Performance_Capabilities .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Plan,_select,_configure_&_maintain_information_systems_infrastructure
+<http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Plan,_select,_configure_&_maintain_information_systems_infrastructure> rdf:type owl:Class ;
+                                                                                                                                                            rdfs:subClassOf :Core_Performance_Capabilities .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Secure_data_&_infrastrudure
+<http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Secure_data_&_infrastrudure> rdf:type owl:Class ;
+                                                                                                                  rdfs:subClassOf :Core_Performance_Capabilities .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Software_modeling_&_analysis
+<http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Software_modeling_&_analysis> rdf:type owl:Class ;
+                                                                                                                   rdfs:subClassOf :Main_Knowledge_Areas .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Software_verification_&_validation
+<http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Software_verification_&_validation> rdf:type owl:Class ;
+                                                                                                                         rdfs:subClassOf :Main_Knowledge_Areas .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Systems_analysis_&_design
+<http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Systems_analysis_&_design> rdf:type owl:Class ;
+                                                                                                                rdfs:subClassOf :Main_Knowledge_Areas .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Hansen
+:Hansen rdf:type owl:NamedIndividual ;
+        :study :Year_1_CE ,
+               :Year_2_CE ,
+               :Year_3_CE ,
+               :Year_4_CE ;
+        :undergraduatesID "Computer_Engineering" .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Year_1_CE
+:Year_1_CE rdf:type owl:NamedIndividual ;
+           :knowledgesID """Computer_architecture_&_organization
+Computer_systems_engineering""" ;
+           :undergraduatesID "Computer_Engineering" .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Year_2_CE
+:Year_2_CE rdf:type owl:NamedIndividual ;
+           :knowledgesID """Digital_logic
+Programming_fundamentals""" ;
+           :undergraduatesID "Computer_Engineering" .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Year_3_CE
+:Year_3_CE rdf:type owl:NamedIndividual ;
+           :knowledgesID "Distrbuted_systems" ;
+           :performanceID "Design_and_implement_computing_systems_computer-controlled_equipment_and_communication_software" ;
+           :undergraduatesID "Computer_Engineering" .
+
+
+###  http://www.semanticweb.org/christian/ontologies/2022/10/ac-curricila-recommendation#Year_4_CE
+:Year_4_CE rdf:type owl:NamedIndividual ;
+           :knowledgesID """Circuits_&_systems
+Electronics""" ;
+           :performanceID "Maintain_computing_systems_that_involve_the_integration_of_software_and_hardware_devices" ;
+           :undergraduatesID "Computer_Engineering" .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
